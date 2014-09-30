@@ -1,13 +1,13 @@
 class PlanDetailsController < ApplicationController
   def index
-    @plan_details = Plan_Detail.all
+    @plan_details = PlanDetail.all
   end
 
   def show
-    @plan_detail = Plan_Detail.find(params[:id])
+    @plan_detail = PlanDetail.find(params[:id])
   end
 
   def edit
-    @plan_detail = Plan_Detail.find(params[:id])
+    @plan_detail = PlanDetail.find(params[:id])
   end
 end

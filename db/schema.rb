@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930033149) do
+ActiveRecord::Schema.define(version: 20140930205203) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -42,9 +42,10 @@ ActiveRecord::Schema.define(version: 20140930033149) do
     t.integer  "user_id"
     t.integer  "trainer_id"
     t.integer  "client_id"
-    t.integer  "plan_detail_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.date     "week_of"
+    t.integer  "total_plans"
   end
 
   create_table "videos", force: true do |t|
