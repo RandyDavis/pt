@@ -1,7 +1,18 @@
-<h1><%= @exercises.size %> Exercises to choose from</h1>
+<h1><%= pluralize(@exercises.size, 'Exercise') %>  to choose from</h1>
 
-<ul>
-  <% @exercises.each do |exercise| %>
-    <li><%= exercise %></li>
-  <% end %>
-</ul>
+<% @exercises.each do |exercise| %>
+  <article>
+    <header>
+      <h2><%= exercise.name %></h2>
+    </header>
+    <p>
+      <%= truncate(exercise.description, length: 40, separator: ' ') %>
+    </p>
+    <table>
+      <tr>
+        <th>Difficulty Level:</th>
+        <td><%= exercise.difficulty %></td>
+      </tr>
+    </table>
+  </article>
+<% end %>
