@@ -1,0 +1,19 @@
+<h2>Editing Plan: Week of <%= @plan.week_of %></h2>
+
+<%= form_for(@plan) do |f| %>
+  <p>
+    <%= f.label :trainer_id %> <br>
+    <%= f.text_field :trainer_id %>
+  </p>
+  <p>
+    <%= f.label :client_id %> <br>
+    <%= f.text_area :client_id %>
+  </p>
+  <p>
+    <%= f.label :plan_detail_id %> <br>
+    <%= f.text_field :plan_detail_id %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

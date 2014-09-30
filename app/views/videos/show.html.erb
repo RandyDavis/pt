@@ -11,4 +11,5 @@
   src="//www.youtube.com/embed/<%= @video.youtube_id %>" frameborder="0" allowfullscreen></iframe>
 </article>
   
-<%= link_to 'All Videos', videos_path %>
+<%= link_to 'All Videos', videos_path %> |
+<%= link_to 'Edit', edit_video_path(@video) %>

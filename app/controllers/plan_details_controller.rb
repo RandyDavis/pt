@@ -6,4 +6,8 @@ class PlanDetailsController < ApplicationController
   def show
     @plan_detail = Plan_Detail.find(params[:id])
   end
+
+  def edit
+    @plan_detail = Plan_Detail.find(params[:id])
+  end
 end

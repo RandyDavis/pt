@@ -1,3 +1,21 @@
 show.html.erb
 
-<%= link_to 'All Categories', categories_path %>
+<article>
+  <header>
+    <h1><%= @category.name %></h1>
+  </header>
+  <p>
+    <%= @category.description %>
+  </p>
+  <h3>Created At:</h3>
+  <p>
+    <%= @category.created_at %>
+  </p>
+  <h3>Last Updated:</h3>
+  <p>
+    <%= @category.updated_at %>
+  </p>
+</article>
+
+<%= link_to 'All Categories', categories_path %> |
+<%= link_to 'Edit', edit_category_path(@category) %>
