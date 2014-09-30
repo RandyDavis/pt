@@ -3,7 +3,7 @@
 <% @exercises.each do |exercise| %>
   <article>
     <header>
-      <h2><%= exercise.name %></h2>
+      <h2><%= link_to(exercise.name, exercise) %></h2>
     </header>
     <p>
       <%= truncate(exercise.description, length: 40, separator: ' ') %>

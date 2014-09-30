@@ -1,1 +1,16 @@
 show.html.erb
+
+<article>
+  <header>
+    <h1><%= @exercise.name %></h1>
+  </header>
+  <p>
+    <%= @exercise.description %>
+  </p>
+  <h3>Difficulty Level:</h3>
+  <p>
+    <%= @exercise.difficulty %>
+  </p>
+</article>
+
+<%= link_to 'All Exercises', exercises_path %>

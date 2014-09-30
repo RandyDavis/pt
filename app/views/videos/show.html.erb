@@ -1,1 +1,14 @@
-show.html.erb
+<article>
+  <header>
+    <h1><%= @video.title %></h1>
+  </header>
+  <p>
+    <%= @video.description %>
+  </p>
+  <h3>Difficulty Level:</h3>
+  
+  <iframe width="560" height="315" 
+  src="//www.youtube.com/embed/<%= @video.youtube_id %>" frameborder="0" allowfullscreen></iframe>
+</article>
+  
+<%= link_to 'All Videos', videos_path %>
