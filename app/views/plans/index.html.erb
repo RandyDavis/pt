@@ -1,0 +1,18 @@
+<h1><%= pluralize(@plans.size, 'Plan') %> Assigned</h1>
+
+<% @plans.each do |plan| %>
+  <article>
+    <header>
+      <h2><%= plan.week_of %></h2>
+    </header>
+    <p>
+      Plan Info Coming Soon!
+      -Table with the following:
+      <ul>
+        <li>Trainer</li>
+        <li>Client</li>
+        <li>Plan_Details_ID</li>
+      </ul>
+    </p>
+  </article>
+<% end %>

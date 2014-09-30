@@ -1,0 +1,12 @@
+<h1><%= pluralize(@plan_details.size, 'Plan Detail') %></h1>
+
+<% @plan_details.each do |plan_detail| %>
+  <article>
+    <table>
+      <tr>
+        <th>Plan Detail</th>
+        <td><%= plan_detail.plan_id %></td>
+      </tr>
+    </table>
+  </article>
+<% end %>

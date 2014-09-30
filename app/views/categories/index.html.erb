@@ -1,0 +1,12 @@
+<h1><%= pluralize(@categories.size, 'Category') %>  to choose from</h1>
+
+<% @categories.each do |category| %>
+  <article>
+    <header>
+      <h2><%= category.name %></h2>
+    </header>
+    <p>
+      <%= truncate(category.description, length: 40, separator: ' ') %>
+    </p>
+  </article>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plan_id: 1
+  exercise_id: 1
+  sets: 1
+  reps: 1
+  complete: false
+
+two:
+  plan_id: 1
+  exercise_id: 1
+  sets: 1
+  reps: 1
+  complete: false
