@@ -1,5 +1,7 @@
 <h1><%= pluralize(@videos.size, 'Video') %>  Available</h1>
 
+<h3><%= link_to 'Add New Video', new_video_path %></h3>
+
 <% @videos.each do |video| %>
   <article>
     <header>

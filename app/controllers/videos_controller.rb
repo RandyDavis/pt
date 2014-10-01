@@ -13,8 +13,23 @@ class VideosController < ApplicationController
 
   def update
     @video = Video.find(params[:id])
-    video_params = params.require(:video).permit!
     @video.update(video_params)
     redirect_to @video
   end
+
+  def new
+    @video = Video.new
+  end
+
+  def create
+    @video = Video.new(video_params)
+    @video.save
+    redirect_to @video
+  end
+
+  private
+
+    def video_params
+      params.require(:video).permit(:title, :description, :youtube_id)
+    end
 end

@@ -1,5 +1,7 @@
 <h1><%= pluralize(@categories.size, 'Category') %>  to choose from</h1>
 
+<h3><%= link_to 'Add New Category', new_category_path %></h3>
+
 <% @categories.each do |category| %>
   <article>
     <header>

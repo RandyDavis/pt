@@ -13,8 +13,23 @@ class PlanDetailsController < ApplicationController
 
   def update
     @plan_detail = PlanDetail.find(params[:id])
-    plan_detail_params = params.require(:plan_detail).permit!
     @plan_detail.update(plan_detail_params)
     redirect_to @plan_detail
   end
+
+  def new
+    @plan_detail = PlanDetail.new(plan_detail_params)
+  end
+
+  def create
+    @plan_detail = PlanDetail.new(plan_detail_params)
+    @plan_detail.save
+    redirect_to @plan_detail
+  end
+
+  private
+
+    def plan_detail_params
+      params.require(:plan_detail).permit(:sets, :reps, :complete, :plan_id, :exercise_id)
+    end
 end

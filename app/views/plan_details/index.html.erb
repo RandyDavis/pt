@@ -1,5 +1,7 @@
 <h1><%= pluralize(@plan_details.size, 'Plan Detail') %></h1>
 
+<h3><%= link_to 'Add New Plan Detail', new_plan_detail_path %></h3>
+
 <% @plan_details.each do |plan_detail| %>
   <article>
     <table>

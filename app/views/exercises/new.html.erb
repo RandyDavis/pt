@@ -1,0 +1,19 @@
+<h2>Add New Exercise</h2>
+
+<%= form_for(@exercise) do |f| %>
+  <p>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %> <br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :difficulty %> <br>
+    <%= f.number_field :difficulty %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
