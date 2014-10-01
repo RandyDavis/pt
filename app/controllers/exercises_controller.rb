@@ -18,7 +18,7 @@ class ExercisesController < ApplicationController
   end
 
   def new
-    @exercise = Exercise.new(exercise_params)
+    @exercise = Exercise.new
   end
 
   def create
