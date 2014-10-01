@@ -6,13 +6,17 @@ class User < ActiveRecord::Base
 
   has_many :plans
 
+  # after_create :default_role
+
   ROLES = [:trainer, :client]
 
-  # def role_symbols
-  #   [role.to_sym]
-  # end
-
-  def role?(role_name)
-    # TODO
+  def role?(role)
+    ROLES.include? role.to_s
   end
+
+  # private
+  
+  # def default_role
+  #   self.role = 'client'
+  # end
 end

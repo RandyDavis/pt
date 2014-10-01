@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001205648) do
+ActiveRecord::Schema.define(version: 20141001232211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,11 @@ ActiveRecord::Schema.define(version: 20141001205648) do
   create_table "daily_exercises", force: true do |t|
     t.integer  "plan_detail_id"
     t.integer  "day_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "sets"
+    t.integer  "reps"
+    t.boolean  "complete",       default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "days", force: true do |t|
@@ -43,16 +46,6 @@ ActiveRecord::Schema.define(version: 20141001205648) do
     t.datetime "updated_at",  null: false
     t.integer  "difficulty"
     t.integer  "category_id"
-  end
-
-  create_table "plan_details", force: true do |t|
-    t.integer  "plan_id"
-    t.integer  "exercise_id"
-    t.integer  "sets"
-    t.integer  "reps"
-    t.boolean  "complete",    default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
   end
 
   create_table "plans", force: true do |t|
@@ -79,6 +72,7 @@ ActiveRecord::Schema.define(version: 20141001205648) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root                             'exercises#index'
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  root                             'static_pages#home'
   # get   'exercises'             => 'exercises#index'
   # get   'exercises/:id'         => 'exercises#show', as: "exercise"
   # get   'exercises/:id/edit'    => 'exercises#edit', as: "edit_exercise"
@@ -29,4 +30,8 @@ Rails.application.routes.draw do
   resources :categories
   resources :videos
 
+  get 'static_pages/home'
+  get 'static_pages/help'
+  get 'static_pages/about'
+  get 'static_pages/contact'
 end

@@ -16,9 +16,9 @@
 </article>
 
 <%= link_to 'All Categories', categories_path %> | 
-<%= if can? :update, @category %>
+<% if can? :update, @category %>
   <%= link_to 'Edit', edit_category_path(@category) %> | 
 <% end %>
-<%= if can? :delete, @category %>
+<% if can? :delete, @category %>
   <%= link_to 'Delete', category_path(@category), method: :delete, data: {confirm: 'Are you sure?'} %>
 <% end %>
