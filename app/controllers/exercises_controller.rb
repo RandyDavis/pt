@@ -21,6 +21,10 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.new
   end
 
+  def in_category
+    render json: Exercise.where(category: params[:category])
+  end
+
   def create
     @exercise = Exercise.new(exercise_params)
     @exercise.save

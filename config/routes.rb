@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   # patch 'videos/:id'            => 'videos#update'
 
   resources :exercises
+  get '/exercises_by_category' => 'exercises#in_category'
   resources :plans
   resources :plan_details
   resources :categories

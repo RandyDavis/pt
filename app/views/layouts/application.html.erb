@@ -13,11 +13,14 @@
   <body>
     
     <%= render 'layouts/header' %>
+    <% logged_in = !current_user.nil? %>
 
     <div class="large-12 columns">
-      <%= render 'layouts/alerts' %>  
-      <%= render 'layouts/leftsidebar' %>
-      <div class="small-8 large-10 columns panel">
+      <%= render 'layouts/alerts' %> 
+      <% if logged_in %>
+        <%= render 'layouts/leftsidebar' %>
+      <% end %>
+      <div class="small-8 large-<%= logged_in ? '10' : '12' %> columns panel">
         <%= yield %>
       </div>
     </div>

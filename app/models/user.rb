@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :plans
 
-  ROLES = [:admin, :trainer, :client]
+  ROLES = [:trainer, :client]
 
   # def role_symbols
   #   [role.to_sym]
