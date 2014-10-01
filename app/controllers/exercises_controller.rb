@@ -27,6 +27,12 @@ class ExercisesController < ApplicationController
     redirect_to @exercise
   end
 
+  def destroy
+    @exercise = Exercise.find(params[:id])
+    @exercise.destroy
+    redirect_to exercises_path
+  end
+
   private
 
     def exercise_params

@@ -27,6 +27,12 @@ class VideosController < ApplicationController
     redirect_to @video
   end
 
+  def destroy
+    @video = Video.find(params[:id])
+    @video.destroy
+    redirect_to videos_path
+  end
+
   private
 
     def video_params

@@ -27,6 +27,12 @@ class PlanDetailsController < ApplicationController
     redirect_to @plan_detail
   end
 
+  def destroy
+    @plan_detail = PlanDetail.find(params[:id])
+    @plan_detail.destroy
+    redirect_to plan_details_path
+  end
+
   private
 
     def plan_detail_params

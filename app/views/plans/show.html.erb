@@ -1,4 +1,5 @@
 show.html.erb
 
 <%= link_to 'All Plans', plans_path %> |
-<%= link_to 'Edit', edit_plan_path(@plan) %>
+<%= link_to 'Edit', edit_plan_path(@plan) %> | 
+<%= link_to 'Delete', plan_path(@plan), method: :delete, data: {confirm: 'Are you sure?'} %>
