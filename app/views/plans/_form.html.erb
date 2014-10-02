@@ -1,14 +1,14 @@
 <%= form_for(@plan) do |f| %>
   <p>
-    <%= f.label :trainer_id %> <br>
+    <%= f.label :trainer_id %>
     <%= f.text_field :trainer_id %>
   </p>
   <p>
-    <%= f.label :client_id %> <br>
-    <%= f.text_area :client_id %>
+    <%= f.label :client_id %>
+    <%= f.text_field :client_id %>
   </p>
   <p>
-    <%= f.label :week_of %> <br>
+    <%= f.label :week_of %>
     <%= f.date_select :week_of, autofocus: true %>
   </p>
   <p>

@@ -20,7 +20,7 @@
       <% if logged_in %>
         <%= render 'layouts/leftsidebar' %>
       <% end %>
-      <div class="small-8 large-<%= logged_in ? '10' : '12' %> columns panel">
+      <div class="small-8 large-centered columns panel">
         <%= yield %>
       </div>
     </div>
