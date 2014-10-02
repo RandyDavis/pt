@@ -2,21 +2,32 @@
   <header>
     <h1><%= @plan.week_of %></h1>
   </header>
-  <h3><%= @daily_exercises.day %>'s Workout: </h3>
 
-  <% @plan.daily_exercises.each do |daily_exercise| %>
-    <p>daily_exercise.exercise_name</p>
-    <p>daily_exercise.sets</p>
-    <p>daily_exercise.reps</p>
+  <% @plan.daily_exercises.group_by(&:day).each do |date, daily_exercises| %>
+    <h3><%= date %>'s Workout: </h3>
+    <div><% daily_exercises.each do |daily_exercise| %>
+      <p><%= daily_exercise.exercise.name %></p>
+      <% if daily_exercise.sets != nil %>
+        <p>SETS: <%= daily_exercise.sets %></p>
+      <% end %>
+      <% if daily_exercise.reps != nil %>
+        <p>REPS: <%= daily_exercise.reps %></p>
+      <% end %>
+      <% if daily_exercise.minutes != nil %>
+        <p>MINUTES: <%= daily_exercise.minutes %></p>
+      <% end %>
+    <% end %></div>
   <% end %>
-  <!-- <p>
-    <%= link_to "Monday", plan_day_index_path %> -->
-  </p>
+  
   <p>
     <%=  %>
   </p>
 
-  <%= form_for(@daily_exercises) do |f| %>
+  <%= form_for([@plan, @daily_exercise]) do |f| %>
+  <p>
+    <%= f.label :day %>
+    <%= f.date_select :day %>
+  </p>
   <p>
     <%= f.label :exercise_name %>
     <%= f.text_field :exercise_name %>
@@ -32,10 +43,6 @@
   <p>
     <%= f.label :minutes %>
     <%= f.number_field :minutes %>
-  </p>
-  <p>
-    <%= f.label :week_of %>
-    <%= f.date_select :week_of, autofocus: true %>
   </p>
   
   <p>

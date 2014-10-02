@@ -26,9 +26,7 @@ Rails.application.routes.draw do
   resources :exercises
   get '/exercises_by_category' => 'exercises#in_category'
   resources :plans do
-    # resources :day do
-    #   resources :daily_exercises
-    # end
+    resources :daily_exercises
   end
 
   resources :plan_details

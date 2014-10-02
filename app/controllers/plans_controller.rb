@@ -1,10 +1,12 @@
 class PlansController < ApplicationController
   def index
     @plans = Plan.all
+
   end
 
   def show
     @plan = Plan.find(params[:id])
+    @daily_exercise = DailyExercise.new
   end
 
   def edit
