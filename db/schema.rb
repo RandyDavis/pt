@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001232211) do
+ActiveRecord::Schema.define(version: 20141002075705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,15 @@ ActiveRecord::Schema.define(version: 20141001232211) do
   end
 
   create_table "daily_exercises", force: true do |t|
-    t.integer  "plan_detail_id"
     t.integer  "day_id"
     t.integer  "sets"
     t.integer  "reps"
-    t.boolean  "complete",       default: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.boolean  "complete",      default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "plan_id"
+    t.integer  "exercise_id"
+    t.string   "exercise_name"
   end
 
   create_table "days", force: true do |t|
