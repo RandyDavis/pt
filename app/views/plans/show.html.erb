@@ -2,9 +2,15 @@
   <header>
     <h1><%= @plan.week_of %></h1>
   </header>
-  <h3>Click a day to view the workout</h3>
-  <p>
-    <%= %>
+  <h3><%= @daily_exercise.day %>'s Workout: </h3>
+
+  <% @plan.daily_exercises.each do |daily_exercise| %>
+    <p>daily_exercise.exercise_name</p>
+    <p>daily_exercise.sets</p>
+    <p>daily_exercise.reps</p>
+  <% end %>
+  <!-- <p>
+    <%= link_to "Monday", plan_day_index_path %> -->
   </p>
   <p>
     <%=  %>

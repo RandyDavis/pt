@@ -1,4 +1,4 @@
 class DailyExercise < ActiveRecord::Base
-  belongs_to :day
+  belongs_to :plan
   has_many :exercises
 end
