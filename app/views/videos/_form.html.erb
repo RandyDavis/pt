@@ -1,15 +1,15 @@
 <%= form_for(@video) do |f| %>
   <p>
-    <%= f.label :title %> <br>
+    <%= f.label :title %> 
     <%= f.text_field :title, autofocus: true, placeholder: "video title" %>
   </p>
   <p>
-    <%= f.label :description %> <br>
+    <%= f.label :description %> 
     <%= f.text_area :description, placeholder: "video description" %>
   </p>
   <p>
-    <%= f.label :youtube_id %> <br>
-    <%= f.text_field :youtube_id, placeholder: "enter the digits after the last slash ONLY" %>
+    <%= f.label :youtube_id %> 
+    <%= f.text_field :youtube_id, placeholder: "enter the 11 random digits after the last slash" %>
   </p>
   <p>
     <%= f.submit %> |

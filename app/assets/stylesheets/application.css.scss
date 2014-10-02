@@ -15,3 +15,8 @@
  *= require foundation_and_overrides
 
  */
+
+body {
+  background: url("sandpaper.png")repeat;
+  background-size: contain;
+}

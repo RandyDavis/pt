@@ -1,5 +1,15 @@
-show.html.erb
-
+<article>
+  <header>
+    <h1><%= @plan.week_of %></h1>
+  </header>
+  <h3>Click a day to view the workout</h3>
+  <p>
+    <%= %>
+  </p>
+  <p>
+    <%=  %>
+  </p>
+</article>
 <%= link_to 'All Plans', plans_path %> |
 <%= link_to 'Edit', edit_plan_path(@plan) %> | 
 <%= link_to 'Delete', plan_path(@plan), method: :delete, data: {confirm: 'Are you sure?'} %>
