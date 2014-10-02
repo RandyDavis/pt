@@ -38,6 +38,7 @@ class PlansController < ApplicationController
   private
 
     def plan_params
-      params.require(:plan).permit(:user_id, :trainer_id, :client_id, :week_of)
-    end 
+      params.require(:plan).permit(:user_id, :trainer_id, :client_id, :week_of, :total_plans)
+    end
+
 end

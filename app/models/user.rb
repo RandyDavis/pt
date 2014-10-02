@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   # after_create :default_role
 
+  validates_presence_of :role
+
   ROLES = [:trainer, :client]
 
   def role?(role)

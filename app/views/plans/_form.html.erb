@@ -5,13 +5,13 @@
   </p>
   <p>
     <%= f.label :client_id %>
-    <%= f.text_field :client_id %>
+    <%= f.collection_select(:client_id, User.where(role: "client"), :id, :name, :prompt => 'Please select a client') %>
   </p>
   <p>
-    <%= f.label :week_of %>
-    <%= f.date_select :week_of, autofocus: true %>
+    <%= f.label :day %>
+    <input type="date" name="plan[day]" />
   </p>
-  
+
   <p>
     <%= f.submit %> |
     <%= link_to "Cancel", plans_path %>
