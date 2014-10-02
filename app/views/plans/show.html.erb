@@ -29,8 +29,8 @@
     <%= f.date_select :day %>
   </p>
   <p>
-    <%= f.label :exercise_name %>
-    <%= f.text_field :exercise_name %>
+    <%= f.label :exercise %>
+    <%= f.collection_select(:exercise_id, Exercise.all, :id, :name, :prompt => 'Please select an exercise') %>
   </p>
   <p>
     <%= f.label :sets %>

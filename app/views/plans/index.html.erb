@@ -5,16 +5,7 @@
 <% @plans.each do |plan| %>
   <article>
     <header>
-      <h2><%= link_to(plan.week_of, plan) %></h2>
+      <h2><%= link_to("#{plan.client.name}'s Plan", plan) %></h2>
     </header>
-    <p>
-      Plan Info Coming Soon!
-      -Table with the following:
-      <ul>
-        <li>Trainer</li>
-        <li>Client</li>
-        <li>Plan_Details_ID</li>
-      </ul>
-    </p>
   </article>
 <% end %>

@@ -147,7 +147,7 @@ category = Category.create!(name: "Cardio",
 
 
 plan = user.plans.create!(trainer_id: user.id,
-                          client_id: User.last
+                          client_id: User.last.id
                           )
 
 plan.daily_exercises.create(day: DateTime.parse("October 2, 2014"),
