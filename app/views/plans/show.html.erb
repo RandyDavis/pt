@@ -2,7 +2,7 @@
   <header>
     <h1><%= @plan.week_of %></h1>
   </header>
-  <h3><%= @daily_exercise.day %>'s Workout: </h3>
+  <h3><%= @daily_exercises.day %>'s Workout: </h3>
 
   <% @plan.daily_exercises.each do |daily_exercise| %>
     <p>daily_exercise.exercise_name</p>
@@ -15,6 +15,35 @@
   <p>
     <%=  %>
   </p>
+
+  <%= form_for(@daily_exercises) do |f| %>
+  <p>
+    <%= f.label :exercise_name %>
+    <%= f.text_field :exercise_name %>
+  </p>
+  <p>
+    <%= f.label :sets %>
+    <%= f.number_field :sets %>
+  </p>
+  <p>
+    <%= f.label :reps %>
+    <%= f.number_field :reps %>
+  </p>
+  <p>
+    <%= f.label :minutes %>
+    <%= f.number_field :minutes %>
+  </p>
+  <p>
+    <%= f.label :week_of %>
+    <%= f.date_select :week_of, autofocus: true %>
+  </p>
+  
+  <p>
+    <%= f.submit %> |
+    <%= link_to "Cancel", plans_path %>
+  </p>
+<% end %>
+
 </article>
 <%= link_to 'All Plans', plans_path %> |
 <%= link_to 'Edit', edit_plan_path(@plan) %> | 
