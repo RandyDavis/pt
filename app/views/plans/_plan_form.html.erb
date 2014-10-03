@@ -1,0 +1,28 @@
+<%= form_for([@plan, @daily_exercise]) do |f| %>
+  <p>
+    <%= f.label :day %>
+    
+    <input type="date" name="plan[day]" />
+  </p>
+  <p>
+    <%= f.label :exercise %>
+    <%= f.collection_select(:exercise_id, Exercise.all, :id, :name, :prompt => 'Please select an exercise') %>
+  </p>
+  <p>
+    <%= f.label :sets %>
+    <%= f.number_field :sets %>
+  </p>
+  <p>
+    <%= f.label :reps %>
+    <%= f.number_field :reps %>
+  </p>
+  <p>
+    <%= f.label :minutes %>
+    <%= f.number_field :minutes %>
+  </p>
+  
+  <p>
+    <%= f.submit %> |
+    <%= link_to "Cancel", plans_path %>
+  </p>
+<% end %>

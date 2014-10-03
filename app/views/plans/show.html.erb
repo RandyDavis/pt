@@ -3,54 +3,29 @@
     <h1><%= @plan.week_of %></h1>
   </header>
 
-  <% @plan.daily_exercises.group_by(&:day).each do |date, daily_exercises| %>
-    <h3><%= date %>'s Workout: </h3>
-    <div><% daily_exercises.each do |daily_exercise| %>
-      <p><%= daily_exercise.exercise.name %></p>
-      <% if daily_exercise.sets != nil %>
-        <p>SETS: <%= daily_exercise.sets %></p>
-      <% end %>
-      <% if daily_exercise.reps != nil %>
-        <p>REPS: <%= daily_exercise.reps %></p>
-      <% end %>
-      <% if daily_exercise.minutes != nil %>
-        <p>MINUTES: <%= daily_exercise.minutes %></p>
-      <% end %>
-    <% end %></div>
-  <% end %>
-  
-  <p>
-    <%=  %>
-  </p>
-
-  <%= form_for([@plan, @daily_exercise]) do |f| %>
-  <p>
-    <%= f.label :day %>
+  <div class="small-12 small-centered columns exsets">
+    <% @plan.daily_exercises.group_by(&:day).each do |date, daily_exercises| %>
+      <h3><%= date %>'s Workout: </h3>
+      <div class="exsets"><% daily_exercises.each do |daily_exercise| %>
+        <div class="exsets">
+          <p><%= daily_exercise.exercise.name %></p>
+          <% if daily_exercise.sets != nil %>
+            <p>SETS: <%= daily_exercise.sets %></p>
+          <% end %>
+          <% if daily_exercise.reps != nil %>
+            <p>REPS: <%= daily_exercise.reps %></p>
+          <% end %>
+          <% if daily_exercise.minutes != nil %>
+            <p>MINUTES: <%= daily_exercise.minutes %></p>
+          <% end %>
+          
+        </div>
+      <% end %></div>
+    <% end %>
     
-    <input type="date" name="plan[day]" />
-  </p>
-  <p>
-    <%= f.label :exercise %>
-    <%= f.collection_select(:exercise_id, Exercise.all, :id, :name, :prompt => 'Please select an exercise') %>
-  </p>
-  <p>
-    <%= f.label :sets %>
-    <%= f.number_field :sets %>
-  </p>
-  <p>
-    <%= f.label :reps %>
-    <%= f.number_field :reps %>
-  </p>
-  <p>
-    <%= f.label :minutes %>
-    <%= f.number_field :minutes %>
-  </p>
+  </div>
   
-  <p>
-    <%= f.submit %> |
-    <%= link_to "Cancel", plans_path %>
-  </p>
-<% end %>
+  <%= render 'plan_form'  %>
 
 </article>
 <%= link_to 'All Plans', plans_path %> |
